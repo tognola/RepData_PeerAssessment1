@@ -38,7 +38,7 @@ sum <- summarise(sum, total_steps = sum(steps))
 ggplot(sum, aes(x=total_steps)) + stat_bin( geom = "bar")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](PA1_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 
@@ -89,7 +89,7 @@ sum2 <- summarise(sum2, mean = mean(steps))
 ggplot(sum2, aes(x=interval, y=mean))+geom_line()
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -150,7 +150,7 @@ sum1 <- summarise(sum1, total_steps = sum(steps), mean = mean(steps), median = m
 ggplot(sum1, aes(x=total_steps)) + stat_bin( geom = "bar")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](PA1_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 ```r
 sum3 <- group_by(newdata, interval)
@@ -158,7 +158,7 @@ sum3 <- summarise(sum3, mean = mean(steps))
 ggplot(sum3, aes(x=interval, y=mean))+geom_line()
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-2.png)<!-- -->
+![](PA1_files/figure-html/unnamed-chunk-10-2.png)<!-- -->
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -188,4 +188,4 @@ sumd <- summarise(newdata, mean = mean(steps))
 qplot(interval, mean, data = sumd, facets= week ~ ., geom=c("line"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![](PA1_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
